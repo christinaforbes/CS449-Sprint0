@@ -1,0 +1,54 @@
+﻿<Window x:Class="Sprint0GUIProgramming.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sprint0GUIProgramming"
+        mc:Ignorable="d"
+        Title="Form" Height="550" Width="800">
+    <Grid Name="Form">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="20*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Name="FormTitleBorder" Grid.Row="1" Grid.Column="1" BorderThickness="0,1,0,1" BorderBrush="DarkGray" Margin="0,5,0,5">
+            <TextBlock Name="FormTitle" Grid.Row="0" Text="Contact Form" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <TextBox Name="Name" Grid.Row="2" Grid.Column="1" Text="Name" />
+        <TextBox Name="Phone" Grid.Row="3" Grid.Column="1" Text="Phone" />
+        <TextBox Name="Email" Grid.Row="4" Grid.Column="1" Text="Email" />
+        <TextBox Name="Message" Grid.Row="5" Grid.Column="1" Text="Message" />
+        <Grid Name="CommunicationOptions" Grid.Row="6" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Name="PreferredCommunication" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Preferred communication method:" />
+            <RadioButton GroupName="CommunicationMethod" Name="PhonePreferred" Grid.Row="1" Grid.Column="0" Content="Phone" IsChecked="True" />
+            <RadioButton GroupName="CommunicationMethod" Name="EmailPreferred" Grid.Row="1" Grid.Column="1" Content="Email" />
+        </Grid>
+        <CheckBox Name="WantsNewsletter" Grid.Row="7" Grid.Column="1" Content="Check if you would like to receive our newsletter" />
+        <Button Grid.Row="8" Grid.Column="1" Content="Submit" Click="SubmitButton_Click"/>
+    </Grid>
+</Window>
